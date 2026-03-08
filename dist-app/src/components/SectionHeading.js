@@ -1,0 +1,3 @@
+import { jsx as _jsx, jsxs as _jsxs } from "react/jsx-runtime";
+const SectionHeading = ({ title, subtitle, light, className = "" }) => (_jsxs("div", { className: `text-center mb-12 ${className}`, children: [_jsx("h2", { className: `font-heading text-3xl md:text-4xl font-bold mb-3 ${light ? "text-primary-foreground" : "text-foreground"}`, children: title }), _jsx("div", { className: "w-20 h-1 bg-secondary mx-auto mb-4 rounded-full" }), subtitle && (_jsx("p", { className: `max-w-2xl mx-auto font-body text-base ${light ? "text-primary-foreground/70" : "text-muted-foreground"}`, children: subtitle }))] }));
+export default SectionHeading;

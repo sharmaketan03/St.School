@@ -1,0 +1,1 @@
+{"version":3,"file":"AnimatedSection.d.ts","sourceRoot":"","sources":["../../../src/components/AnimatedSection.tsx"],"names":[],"mappings":"AAIA,UAAU,oBAAoB;IAC5B,QAAQ,EAAE,KAAK,CAAC,SAAS,CAAC;IAC1B,SAAS,CAAC,EAAE,MAAM,CAAC;IACnB,KAAK,CAAC,EAAE,MAAM,CAAC;CAChB;AAED,QAAA,MAAM,eAAe,GAAI,gCAAyC,oBAAoB,4CAerF,CAAC;AAEF,eAAe,eAAe,CAAC"}

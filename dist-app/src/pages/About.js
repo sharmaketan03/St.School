@@ -1,0 +1,61 @@
+import { jsxs as _jsxs, jsx as _jsx } from "react/jsx-runtime";
+import Layout from "@/components/Layout";
+import PageHero from "@/components/PageHero";
+import AnimatedSection from "@/components/AnimatedSection";
+import schoolBuilding from "@/assets/school-building.png";
+import logo from "@/assets/logo.png";
+import { motion } from "framer-motion";
+import { Target, Eye, Heart, BookOpen, Users, GraduationCap, Trophy, Shield, Globe, Star, ArrowRight, Sparkles, Award } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useState, useEffect, useRef } from "react";
+const CountUp = ({ target, suffix = "" }) => {
+    const [count, setCount] = useState(0);
+    const ref = useRef(null);
+    const [started, setStarted] = useState(false);
+    useEffect(() => {
+        const observer = new IntersectionObserver(([e]) => { if (e.isIntersecting)
+            setStarted(true); }, { threshold: 0.5 });
+        if (ref.current)
+            observer.observe(ref.current);
+        return () => observer.disconnect();
+    }, []);
+    useEffect(() => {
+        if (!started)
+            return;
+        let cur = 0;
+        const step = target / 125;
+        const t = setInterval(() => { cur += step; if (cur >= target) {
+            setCount(target);
+            clearInterval(t);
+        }
+        else
+            setCount(Math.floor(cur)); }, 16);
+        return () => clearInterval(t);
+    }, [started, target]);
+    return _jsxs("div", { ref: ref, children: [count, suffix] });
+};
+const milestones = [
+    { year: "2001", title: "School Founded", desc: "Established with a vision of holistic education." },
+    { year: "2005", title: "CBSE Affiliation", desc: "Received affiliation from CBSE, New Delhi." },
+    { year: "2010", title: "New Campus", desc: "Moved to the current state-of-the-art campus." },
+    { year: "2015", title: "Digital Classrooms", desc: "Introduced smart boards and digital learning." },
+    { year: "2020", title: "Sports Academy", desc: "Launched dedicated sports training programs." },
+    { year: "2025", title: "100% Results", desc: "Achieved 100% board exam pass rate." },
+];
+const About = () => (_jsxs(Layout, { children: [_jsx(PageHero, { title: "About Us", subtitle: "Discover our legacy of educational excellence", breadcrumb: "About Us" }), _jsx("section", { className: "section-padding overflow-hidden", children: _jsx("div", { className: "container mx-auto", children: _jsxs("div", { className: "grid md:grid-cols-2 gap-14 items-center", children: [_jsxs(AnimatedSection, { children: [_jsxs("span", { className: "text-secondary font-semibold text-sm tracking-wider uppercase flex items-center gap-2", children: [_jsx(Sparkles, { className: "w-4 h-4" }), " Our Story"] }), _jsx("h2", { className: "section-title mt-2", children: "A Legacy of Excellence" }), _jsx("div", { className: "w-16 h-1 bg-secondary mt-3 mb-6 rounded-full" }), _jsx("p", { className: "text-muted-foreground leading-relaxed mb-4", children: "St. Joseph's International School, Dholpur was established with a vision to provide world-class education in the heart of Rajasthan. Affiliated to CBSE, New Delhi, our school has been a cornerstone of academic excellence and character formation." }), _jsx("p", { className: "text-muted-foreground leading-relaxed mb-4", children: "Our institution believes in nurturing every child's potential through a balanced curriculum that emphasizes academics, moral values, sports, and co-curricular activities." }), _jsx("p", { className: "text-muted-foreground leading-relaxed mb-6", children: "With state-of-the-art infrastructure, experienced faculty, and a nurturing environment, we continue to set benchmarks in educational excellence." }), _jsx("div", { className: "grid grid-cols-2 gap-3 mb-6", children: [
+                                        { icon: Shield, text: "Safe Campus" },
+                                        { icon: Globe, text: "Global Vision" },
+                                        { icon: Heart, text: "Value Based" },
+                                        { icon: Star, text: "Top Results" },
+                                    ].map((item) => (_jsxs("div", { className: "flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 rounded-lg p-2.5", children: [_jsx(item.icon, { className: "w-4 h-4 text-secondary shrink-0" }), " ", item.text] }, item.text))) }), _jsxs(Link, { to: "/vision-mission", className: "btn-primary inline-flex items-center gap-2", children: ["Our Vision ", _jsx(ArrowRight, { className: "w-4 h-4" })] })] }), _jsx(AnimatedSection, { delay: 0.2, children: _jsxs("div", { className: "relative", children: [_jsxs("div", { className: "bg-secondary/20 rounded-2xl p-3 relative overflow-hidden", children: [_jsx("img", { src: schoolBuilding, alt: "School Campus", className: "rounded-xl w-full shadow-lg" }), _jsx(motion.div, { initial: { opacity: 0, scale: 0 }, whileInView: { opacity: 1, scale: 1 }, viewport: { once: true }, transition: { delay: 0.5, type: "spring" }, className: "absolute top-6 right-6 bg-secondary text-secondary-foreground rounded-full px-4 py-2 text-xs font-bold shadow-lg", children: "\u2B50 Since 2001" })] }), _jsx(motion.div, { animate: { y: [-5, 5, -5] }, transition: { repeat: Infinity, duration: 3, ease: "easeInOut" }, className: "absolute -bottom-6 -left-6 bg-card rounded-xl shadow-xl p-4 border border-border", children: _jsx("img", { src: logo, alt: "Logo", className: "w-16 h-16 object-contain" }) }), _jsxs(motion.div, { animate: { y: [5, -5, 5] }, transition: { repeat: Infinity, duration: 4, ease: "easeInOut" }, className: "absolute -top-4 -right-4 bg-primary text-primary-foreground rounded-xl shadow-xl p-4 hidden md:block", children: [_jsx("p", { className: "text-2xl font-heading font-bold", children: "25+" }), _jsx("p", { className: "text-xs text-primary-foreground/70", children: "Years" })] })] }) })] }) }) }), _jsx("section", { className: "bg-primary py-14", children: _jsx("div", { className: "container mx-auto px-4", children: _jsx("div", { className: "grid grid-cols-2 md:grid-cols-4 gap-8 text-center", children: [
+                        { value: 2000, suffix: "+", label: "Students", icon: Users },
+                        { value: 100, suffix: "+", label: "Faculty", icon: GraduationCap },
+                        { value: 50, suffix: "+", label: "Awards", icon: Trophy },
+                        { value: 25, suffix: "+", label: "Years", icon: Award },
+                    ].map((s, i) => (_jsx(AnimatedSection, { delay: i * 0.1, children: _jsxs(motion.div, { whileHover: { scale: 1.05 }, children: [_jsx(s.icon, { className: "w-8 h-8 text-secondary mx-auto mb-2" }), _jsx("p", { className: "text-3xl md:text-4xl font-heading font-bold text-primary-foreground", children: _jsx(CountUp, { target: s.value, suffix: s.suffix }) }), _jsx("p", { className: "text-primary-foreground/60 text-sm", children: s.label })] }) }, s.label))) }) }) }), _jsxs("section", { className: "section-padding bg-cream relative overflow-hidden", children: [_jsx(motion.div, { animate: { rotate: 360 }, transition: { repeat: Infinity, duration: 60, ease: "linear" }, className: "absolute -top-32 -right-32 w-64 h-64 border border-secondary/10 rounded-full" }), _jsxs("div", { className: "container mx-auto text-center relative z-10", children: [_jsxs(AnimatedSection, { children: [_jsxs("span", { className: "text-secondary font-semibold text-sm tracking-wider uppercase flex items-center gap-2 justify-center", children: [_jsx(Heart, { className: "w-4 h-4" }), " Our Foundation"] }), _jsx("h2", { className: "section-title mt-2", children: "Our Core Values" }), _jsx("div", { className: "gold-underline" })] }), _jsx("div", { className: "grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10", children: [
+                                { icon: Target, title: "Excellence", desc: "Pursuing the highest standards in everything we do.", color: "bg-blue-500/10" },
+                                { icon: Eye, title: "Integrity", desc: "Building character through honesty and transparency.", color: "bg-emerald-500/10" },
+                                { icon: Heart, title: "Compassion", desc: "Fostering empathy and kindness in our community.", color: "bg-rose-500/10" },
+                                { icon: BookOpen, title: "Innovation", desc: "Embracing creativity and modern learning approaches.", color: "bg-amber-500/10" },
+                            ].map((v, i) => (_jsx(AnimatedSection, { delay: i * 0.1, children: _jsxs(motion.div, { whileHover: { y: -8, scale: 1.03 }, className: "bg-card p-7 rounded-xl border border-border group hover:border-secondary/40 hover:shadow-xl transition-all relative overflow-hidden", children: [_jsx("div", { className: "absolute top-0 right-0 w-20 h-20 bg-secondary/5 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity" }), _jsx("div", { className: `w-14 h-14 ${v.color} rounded-xl flex items-center justify-center mx-auto mb-4`, children: _jsx(v.icon, { className: "w-7 h-7 text-secondary" }) }), _jsx("h3", { className: "font-heading font-semibold text-lg mb-2", children: v.title }), _jsx("p", { className: "text-sm text-muted-foreground", children: v.desc })] }) }, v.title))) })] })] }), _jsx("section", { className: "section-padding", children: _jsxs("div", { className: "container mx-auto", children: [_jsx(AnimatedSection, { children: _jsxs("div", { className: "text-center", children: [_jsxs("span", { className: "text-secondary font-semibold text-sm tracking-wider uppercase flex items-center gap-2 justify-center", children: [_jsx(Sparkles, { className: "w-4 h-4" }), " Our Journey"] }), _jsx("h2", { className: "section-title mt-2", children: "Milestones" }), _jsx("div", { className: "gold-underline" })] }) }), _jsxs("div", { className: "relative mt-12 max-w-3xl mx-auto", children: [_jsx("div", { className: "absolute left-6 md:left-1/2 top-0 bottom-0 w-0.5 bg-border md:-translate-x-px" }), milestones.map((m, i) => (_jsx(AnimatedSection, { delay: i * 0.1, children: _jsxs("div", { className: `flex gap-6 mb-10 ${i % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`, children: [_jsx("div", { className: "hidden md:block md:w-1/2" }), _jsx("div", { className: "relative", children: _jsx(motion.div, { whileHover: { scale: 1.2 }, className: "w-12 h-12 bg-secondary text-secondary-foreground rounded-full flex items-center justify-center font-heading font-bold text-xs z-10 relative shadow-lg", children: m.year }) }), _jsxs(motion.div, { whileHover: { y: -3 }, className: "flex-1 bg-card rounded-xl p-5 border border-border hover:border-secondary/30 hover:shadow-lg transition-all", children: [_jsx("h4", { className: "font-heading font-bold text-foreground mb-1", children: m.title }), _jsx("p", { className: "text-sm text-muted-foreground", children: m.desc })] })] }) }, m.year)))] })] }) }), _jsxs("section", { className: "relative py-20 overflow-hidden", children: [_jsx("div", { className: "absolute inset-0 bg-primary" }), _jsx(motion.div, { animate: { x: [-30, 30, -30] }, transition: { repeat: Infinity, duration: 10, ease: "easeInOut" }, className: "absolute top-0 right-0 w-80 h-80 bg-secondary/10 rounded-full blur-[100px]" }), _jsx("div", { className: "container mx-auto px-4 relative z-10 text-center", children: _jsxs(AnimatedSection, { children: [_jsxs("h2", { className: "text-3xl md:text-4xl font-heading font-bold text-primary-foreground mb-4", children: ["Want to Be Part of Our ", _jsx("span", { className: "text-secondary", children: "Family" }), "?"] }), _jsx("p", { className: "text-primary-foreground/70 max-w-xl mx-auto mb-8", children: "Discover what makes St. Joseph's the best choice for your child's future." }), _jsxs("div", { className: "flex flex-wrap justify-center gap-4", children: [_jsxs(Link, { to: "/admissions", className: "btn-secondary inline-flex items-center gap-2", children: ["Apply Now ", _jsx(ArrowRight, { className: "w-4 h-4" })] }), _jsx(Link, { to: "/contact", className: "bg-primary-foreground/10 text-primary-foreground border border-primary-foreground/20 px-6 py-3 rounded-lg font-semibold transition-all duration-300 hover:bg-primary-foreground/20 inline-flex items-center gap-2", children: "Contact Us" })] })] }) })] })] }));
+export default About;

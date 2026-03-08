@@ -1,0 +1,32 @@
+// {
+//   "files": [],
+//   "references": [
+//     { "path": "./tsconfig.app.json" },
+//     { "path": "./tsconfig.node.json" }
+//   ],
+//   "compilerOptions": {
+//     "baseUrl": ".",
+//     "paths": { "@/*": ["src/*"] }
+//   },
+//   "include": ["src"]
+// }
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "NodeNext",                // ✅ must match moduleResolution
+    "moduleResolution": "NodeNext",
+    "outDir": "dist-node",
+    "composite": true,                   // ✅ needed for project references
+    "declaration": true,                 // ✅ needed for emitDeclarationOnly
+    "emitDeclarationOnly": true,         // ✅ only types, no JS output
+    "noEmit": false,                     // ❌ must be false if emitDeclarationOnly is used
+    "allowImportingTsExtensions": true,  // ✅ Node scripts me allowed
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "skipLibCheck": true
+  },
+  "include": ["vite.config.ts", "scripts/**/*.ts"]
+}

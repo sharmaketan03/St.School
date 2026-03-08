@@ -1,0 +1,52 @@
+// {
+//   "extends": "./tsconfig.json",
+//   "compilerOptions": {
+//     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+//     "target": "ES2023",
+//     "lib": ["ES2023"],
+//     "module": "NodeNext",
+//     "moduleResolution": "nodenext",
+//     "types": ["node"],
+//     "skipLibCheck": true,
+
+//     /* Bundler / module settings */
+//     "allowImportingTsExtensions": true,    // ✅ Node scripts ke liye true
+//     "verbatimModuleSyntax": true,
+//     "moduleDetection": "force",
+
+//     /* Composite project settings */
+//     "composite": true,
+//     "declaration": true,
+//     "declarationMap": true,
+//     "outDir": "dist-node",
+//     "noEmit": false,                         // Node scripts sirf type-check
+//     "noEmitOnError": true, 
+
+//     /* React interoperability fixes */
+//     "esModuleInterop": true,                
+//     "allowSyntheticDefaultImports": true,  
+
+//     /* Strictness / linting */
+//     "strict": true,
+//     "noUnusedLocals": true,
+//     "noUnusedParameters": true,
+//     "noFallthroughCasesInSwitch": true,
+//     "noUncheckedSideEffectImports": true,
+//     "forceConsistentCasingInFileNames": true
+//   },
+//   "include": ["vite.config.ts", "scripts/**/*.ts"]
+// }
+
+
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist-node",
+    "noEmit": false,                 // JS output sirf optional, important: declaration generate ho
+    "emitDeclarationOnly": true,     // ✅ d.ts files generate karega, JS ignore
+    "allowImportingTsExtensions": true, // ✅ Node scripts ke liye allowed
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "include": ["vite.config.ts", "scripts/**/*.ts"]
+}
