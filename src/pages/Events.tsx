@@ -5,7 +5,7 @@ import { Calendar, MapPin } from "lucide-react";
 
 const events = [
   { title: "Annual Sports Day", date: "March 15, 2026", location: "School Grounds", desc: "A grand celebration of athletic talent and sportsmanship featuring track events, team sports, and prize distribution.", color: "bg-primary" },
-  { title: "Science Exhibition", date: "April 5, 2026", location: "Science Labs", desc: "Students present innovative science projects and experiments showcasing their scientific inquiry skills.", color: "bg-secondary" },
+  { title: "Science Exhibition", date: "April 5, 2026", location: "Science Labs", desc: "Students present creative science projects and simple experiments to understand basic scientific concepts.", color: "bg-secondary" },
   { title: "Annual Day Celebration", date: "December 20, 2025", location: "School Auditorium", desc: "A spectacular evening of cultural performances, awards, and celebrations of student achievements.", color: "bg-primary" },
   { title: "Republic Day Celebration", date: "January 26, 2026", location: "School Campus", desc: "Patriotic celebrations with flag hoisting, parade, cultural programs, and speeches.", color: "bg-secondary" },
   { title: "Inter-School Debate", date: "February 15, 2026", location: "Conference Hall", desc: "Students from across the region compete in intellectual discourse on current topics.", color: "bg-primary" },

@@ -16,7 +16,8 @@ const VisionMission = () => (
               </div>
               <h2 className="font-heading font-bold text-2xl text-primary mb-4">Our Vision</h2>
               <p className="text-muted-foreground leading-relaxed">
-                To be a premier educational institution that nurtures young minds to become compassionate, innovative, and responsible global citizens, rooted in values and committed to excellence in all endeavors.
+                 Ar. St. Joseph's International School is to empower student to acquire, demonstrate, Articulate and value knowledge and skills is that will support them, as life learners, to perticipate in and contribute to the global world and practice the core values of the school: Respect, Tolerance Inclusion and excellance.
+
               </p>
             </div>
           </AnimatedSection>
@@ -27,7 +28,9 @@ const VisionMission = () => (
               </div>
               <h2 className="font-heading font-bold text-2xl text-primary mb-4">Our Mission</h2>
               <p className="text-muted-foreground leading-relaxed">
-                To provide holistic education that develops intellectual curiosity, physical fitness, spiritual growth, and emotional resilience. We aim to create a learning environment that inspires creativity, critical thinking, and lifelong learning.
+             We are dedicated to fulfillings every child's educational and developmental needs in a safe and caring environment conducive to learning and teaching.
+
+we aim to create responsible, global citizens who show understanding, compassion and acceptance oh the differences in the world. we strive to ensure that every child in our care is empowered to make choice and encouraged to contribute to our community.
               </p>
             </div>
           </AnimatedSection>

@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import About from "./pages/About";
+import DirectorMessage from "./pages/DirectorMessage";
 import PrincipalMessage from "./pages/PrincipalMessage";
 import VisionMission from "./pages/VisionMission";
 import Faculty from "./pages/Faculty";
@@ -55,6 +56,7 @@ const App = () => (
           <Route path="/fee-structure" element={<FeeStructure />} />
           <Route path="/calendar" element={<SchoolCalendar />} />
           <Route path="/student-life" element={<StudentLife />} />
+          <Route path="/director-message" element={<DirectorMessage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

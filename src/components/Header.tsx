@@ -9,6 +9,7 @@ const navItems = [
     label: "About",
     children: [
       { label: "About Us", path: "/about" },
+        { label: "Director's Message", path: "/director-message" },
       { label: "Principal's Message", path: "/principal-message" },
       { label: "Vision & Mission", path: "/vision-mission" },
       { label: "Faculty", path: "/faculty" },
@@ -132,7 +133,8 @@ const Header = () => {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="lg:hidden bg-card border-t animate-fade-in">
+          
+          <div className="lg:hidden bg-card border-t animate-fade-in z-999 inset-0">
             <div className="container mx-auto px-4 py-4 space-y-1">
               {navItems.map((item) =>
                 item.children ? (

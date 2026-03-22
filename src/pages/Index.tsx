@@ -126,7 +126,7 @@ const features = [
 
 const news = [
   { title: "Annual Sports Day 2026", date: "March 15, 2026", desc: "Join us for an exciting day of athletic competition and school spirit." },
-  { title: "Science Exhibition", date: "April 5, 2026", desc: "Students showcase innovative projects and scientific discoveries." },
+  { title: "Science Exhibition", date: "April 5, 2026", desc: "Students showcase creative science projects and practical experiments." },
   { title: "Parent-Teacher Meeting", date: "March 22, 2026", desc: "Discuss your child's progress with our dedicated faculty members." },
 ];
 
@@ -267,7 +267,7 @@ const HeroSection = () => {
                 </div>
               </div>
               <div className="space-y-2.5">
-                {["Pre-Nursery to Class XII", "CBSE Curriculum", "Smart Classrooms", "Sports Academy"].map((item, i) => (
+                {["Pre-Nursery to Class X", "CBSE Curriculum", "Smart Classrooms", "Sports Academy"].map((item, i) => (
                   <motion.div key={item} initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 + i * 0.1 }}
                     className="flex items-center gap-2.5 text-primary-foreground/80 text-sm"
                   >
